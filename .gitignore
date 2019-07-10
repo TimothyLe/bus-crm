@@ -1,0 +1,4 @@
+#workspace config
+.ipynb_checkpoints/
+.vscode/
+enron-spam

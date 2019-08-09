@@ -7,10 +7,15 @@ import string
 
 import json
 
-def searchGen(val, Site, Area):
-    Key_words = str(val) #input("eneter key word: ")
+#### general search to find anything on google ####
+def search(val, # Employment value that you want 
+    Site,       # input any specific site, such as FB or other social sites
+    Area):      # Search Area
+
+    Key_words = str(val) 
     http = urllib3.PoolManager()
 
+    urls = open("text_ex","w+")
     search_area = str(Site)
     area = str(Area)
     driver = webdriver.Chrome()
@@ -38,11 +43,17 @@ def searchGen(val, Site, Area):
     driver.close()
     return
 
-def searchFB( val, Area):
-    searchGen(val, "Facebook", Area)
+#### Search that is Facebook specific ####
+def searchFB( val,  # Employment value that you want 
+    Area):          # Area of search
+
+    search(val, "Facebook", Area)
     return
 
-def search(val, Area):
-    searchGen(val, " ", Area)
+#### Search that general ####    
+def searchGen(val, # Employment value that you want 
+    Area):         # Area of search
+    search(val, " ", Area)
     return
+
     

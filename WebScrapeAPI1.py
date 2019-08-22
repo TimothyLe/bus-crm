@@ -5,10 +5,7 @@ from bs4 import BeautifulSoup
 import urllib3
 from urllib.request import urlopen
 
-import string
-
 import json
-import re
 
 #### general search to find anything on google ####
 def search(val, # Employment value that you want 
@@ -59,4 +56,7 @@ def searchGen(val, # Employment value that you want
     search(val, " ", Area)
     return
 
-searchFB("Spanish", "San Jose")
+def background( val, 
+    Area):
+    search(val, "", Area)  
+    return

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: whipcrm-deployment
+  labels:
+    app: whipcrm-app
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: whipcrm-app
+  template:
+    metadata:
+      labels:
+        app: whipcrm-app
+    spec:
+      containers:
+      - name: whipcrm-app
+        image: docker.io/library/whipcrm-app:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80
